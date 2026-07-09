@@ -1,0 +1,840 @@
+/* =====================================================
+   Resume Builder Pro
+   Phase B - Part 1
+   Layout + Sidebar + Toolbar + Form
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#edf3fb;
+    overflow-x:hidden;
+    color:#333;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+    display:flex;
+    min-height:100vh;
+    width:100%;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    position:fixed;
+
+    left:-270px;
+
+    top:0;
+
+    width:260px;
+
+    height:100vh;
+
+    background:linear-gradient(180deg,#3ad3d3,#142A63);
+
+    padding:30px 20px;
+
+    transition:.35s;
+
+    z-index:999;
+
+    overflow-y:auto;
+
+    box-shadow:5px 0 25px rgba(0,0,0,.25);
+
+}
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+.logo{
+
+    color:white;
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   SIDEBAR BUTTONS
+=========================== */
+
+.sidebar button{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 18px;
+
+    margin-bottom:10px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.sidebar button:hover{
+
+    background:rgba(16, 247, 235, 0.15);
+
+    transform:translateX(5px);
+
+}
+
+/* Close Button */
+
+.close-btn{
+
+    background:#f17e7e !important;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+}
+
+.close-btn:hover{
+
+    background:#3fe60c !important;
+
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+
+.main-content{
+
+    flex:1;
+
+    width:100%;
+
+    padding:25px;
+
+}
+
+/* ===========================
+   TOP TOOLBAR
+=========================== */
+
+.top-toolbar{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+
+}
+
+.menu-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.menu-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.top-toolbar button{
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.top-toolbar button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+
+}
+
+.import-btn{
+
+    background:#2563EB;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.top-toolbar select{
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   CONTENT AREA
+=========================== */
+
+.content-wrapper{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:flex-start;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form{
+
+    flex:1;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.form h2{
+
+    color:#1E3A8A;
+
+    margin-bottom:25px;
+
+    font-size:30px;
+
+}
+
+.form label{
+
+    font-weight:600;
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+.form input,
+.form textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d8dce5;
+
+    border-radius:12px;
+
+    margin-bottom:18px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.form textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
+
+.form input:focus,
+.form textarea:focus{
+
+    outline:none;
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+.form button{
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.form button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   PREVIEW
+=========================== */
+
+.preview{
+
+    width:794px;
+
+    max-width:100%;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    min-height:1123px;
+
+}
+
+.preview img{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    border:5px solid #1E3A8A;
+
+    object-fit:cover;
+
+}
+
+.preview h2{
+
+    font-size:34px;
+
+    color:#1E3A8A;
+
+    margin-top:20px;
+
+}
+
+.preview h3{
+
+    margin-top:25px;
+
+    color:#1E3A8A;
+
+    border-bottom:2px solid #e5e7eb;
+
+    padding-bottom:6px;
+
+}
+
+.preview p{
+
+    line-height:1.7;
+
+    margin-top:6px;
+
+}
+
+.preview hr{
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+    margin:18px 0;
+
+}
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark{
+
+background:#111827;
+
+color:#f3f4f6;
+
+}
+
+body.dark .main-content{
+
+background:#111827;
+
+}
+
+body.dark .top-toolbar,
+body.dark .form,
+body.dark .preview{
+
+background:#1f2937;
+
+color:white;
+
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select{
+
+background:#374151;
+
+color:white;
+
+border:1px solid #4b5563;
+
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder{
+
+color:#d1d5db;
+
+}
+
+body.dark h2,
+body.dark h3{
+
+color:#60a5fa;
+
+}
+
+body.dark hr{
+
+border-color:#4b5563;
+
+}
+
+body.dark .resume-card{
+
+background:#374151;
+
+border-left:5px solid #60a5fa;
+
+}
+
+body.dark .skill-badge{
+
+background:#3b82f6;
+
+}
+/* ==========================================
+   RESUME CARD
+========================================== */
+
+.resume-card{
+
+background:#f8fafc;
+
+padding:16px;
+
+margin-bottom:18px;
+
+border-left:5px solid #2563eb;
+
+border-radius:10px;
+
+transition:.3s;
+
+}
+
+.resume-card:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+/* ==========================================
+   SKILLS
+========================================== */
+
+.skill-badge{
+
+display:inline-block;
+
+padding:10px 18px;
+
+margin:6px;
+
+background:#2563eb;
+
+color:white;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.skill-badge:hover{
+
+transform:scale(1.08);
+
+}
+/* ==========================================
+   TEMPLATES
+========================================== */
+
+.resume.modern{
+
+border-top:8px solid #2563eb;
+
+}
+
+.resume.professional{
+
+border-left:10px solid #111827;
+
+}
+
+.resume.classic{
+
+border:2px solid #555;
+
+}
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+button{
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+.form,
+.preview,
+.top-toolbar{
+
+animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* ==========================================
+   1200px
+========================================== */
+
+@media(max-width:1200px){
+
+.content-wrapper{
+
+flex-direction:column;
+
+}
+
+.form{
+
+width:100%;
+
+}
+
+.preview{
+
+width:100%;
+
+margin:auto;
+
+}
+
+}
+/* ==========================================
+   992px
+========================================== */
+
+@media(max-width:992px){
+
+.main-content{
+
+padding:15px;
+
+}
+
+.top-toolbar{
+
+justify-content:center;
+
+}
+
+.top-toolbar button,
+.top-toolbar select{
+
+flex:1;
+
+min-width:140px;
+
+}
+
+}
+/* ==========================================
+   768px
+========================================== */
+
+@media(max-width:768px){
+
+.form{
+
+padding:25px;
+
+}
+
+.preview{
+
+padding:25px;
+
+min-height:auto;
+
+}
+
+.preview img{
+
+width:110px;
+
+height:110px;
+
+}
+
+.preview h2{
+
+font-size:28px;
+
+}
+
+.form h2{
+
+font-size:26px;
+
+}
+
+.top-toolbar{
+
+gap:10px;
+
+}
+
+.top-toolbar button,
+.import-btn,
+.top-toolbar select{
+
+width:100%;
+
+}
+
+}
+/* ==========================================
+   480px
+========================================== */
+
+@media(max-width:480px){
+
+.sidebar{
+
+width:240px;
+
+left:-250px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+}
+
+.preview{
+
+padding:20px;
+
+}
+
+.preview h2{
+
+font-size:24px;
+
+}
+
+.preview h3{
+
+font-size:18px;
+
+}
+
+.form{
+
+padding:18px;
+
+}
+
+}
+/* ==========================================
+   PRINT
+========================================== */
+
+@media print{
+
+.sidebar,
+.top-toolbar,
+.form{
+
+display:none;
+
+}
+
+.preview{
+
+width:100%;
+
+box-shadow:none;
+
+margin:0;
+
+padding:20px;
+
+border:none;
+
+}
+
+}
+@page{
+
+size:A4;
+
+margin:10mm;
+
+}
