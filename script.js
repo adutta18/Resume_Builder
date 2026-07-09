@@ -12,7 +12,6 @@ const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const summaryInput = document.getElementById("summary");
 const photoInput = document.getElementById("photo");
-
 // --------------------
 // Preview
 // --------------------
