@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <h2 class="logo">Resume Builder</h2>
+        <button id="closeSidebar" class="close-btn">
+    ✖ Hide Side Bar </button>
+        <button id="personalBtn">👤 Personal</button>
+
+        <button id="educationBtn">🎓 Education</button>
+
+        <button id="experienceBtn">💼 Experience</button>
+
+        <button id="skillsBtn">⭐ Skills</button>
+
+        <button id="projectsBtn">🚀 Projects</button>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Toolbar -->
+
+        <div class="top-toolbar">
+<button id="menuBtn" class="menu-btn">
+    ☰
+</button>
+            <select id="templateSelector">
+                <option value="modern">Modern</option>
+                <option value="professional">Professional</option>
+                <option value="classic">Classic</option>
+            </select>
+
+            <button id="themeBtn">🌙 Dark</button>
+
+            <button id="saveBtn">💾 Save</button>
+
+            <button id="exportBtn">📤 Export</button>
+
+            <label class="import-btn">
+                📥 Import
+                <input type="file" id="importFile" hidden>
+            </label>
+
+            <button id="downloadBtn">
+                ⬇ Download PDF
+            </button>
+
+            <button onclick="window.print()">
+                🖨 Print
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="content-wrapper">
+
+            <!-- FORM -->
+
+            <div class="form">
+
+                <!-- PERSONAL -->
+
+                <section id="personalSection">
+
+                    <h2>Personal Information</h2>
+
+                    <label><b>Profile Photo</b></label>
+
+                    <input type="file"
+                        id="photo"
+                        accept="image/*">
+
+                    <input type="text"
+                        id="name"
+                        placeholder="Full Name">
+
+                    <input type="email"
+                        id="email"
+                        placeholder="Email">
+
+                    <input type="text"
+                        id="phone"
+                        placeholder="Phone">
+
+                    <textarea
+                        id="summary"
+                        placeholder="Professional Summary"></textarea>
+
+                </section>
+
+
+                <!-- EDUCATION -->
+
+                <section id="educationSection" style="display:none;">
+
+                    <h2>Education</h2>
+
+                    <input type="text"
+                        id="degree"
+                        placeholder="Degree">
+
+                    <input type="text"
+                        id="college"
+                        placeholder="College">
+
+                    <input type="text"
+                        id="year"
+                        placeholder="Passing Year">
+
+                    <button id="addEducation">
+                        Add Education
+                    </button>
+
+                </section>
+
+
+
+                <!-- EXPERIENCE -->
+
+                <section id="experienceSection" style="display:none;">
+
+                    <h2>Experience</h2>
+
+                    <input type="text"
+                        id="company"
+                        placeholder="Company Name">
+
+                    <input type="text"
+                        id="designation"
+                        placeholder="Designation">
+
+                    <input type="text"
+                        id="duration"
+                        placeholder="Duration">
+
+                    <textarea
+                        id="expDescription"
+                        placeholder="Job Description"></textarea>
+
+                    <button id="addExperience">
+                        Add Experience
+                    </button>
+
+                </section>
+
+
+
+                <!-- SKILLS -->
+
+                <section id="skillsSection" style="display:none;">
+
+                    <h2>Skills</h2>
+
+                    <input type="text"
+                        id="skillInput"
+                        placeholder="Enter Skill">
+
+                    <button id="addSkill">
+                        Add Skill
+                    </button>
+
+                </section>
+
+
+
+                <!-- PROJECTS -->
+
+                <section id="projectsSection" style="display:none;">
+
+                    <h2>Projects</h2>
+
+                    <input type="text"
+                        id="projectName"
+                        placeholder="Project Name">
+
+                    <textarea
+                        id="projectDescription"
+                        placeholder="Project Description"></textarea>
+
+                    <button id="addProject">
+                        Add Project
+                    </button>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- ================= PREVIEW ================= -->
+
+            <div class="preview resume">
+
+                <div class="photo-area">
+
+                    <img id="profilePreview"
+                        src="https://via.placeholder.com/130"
+                        alt="Profile">
+
+                </div>
+
+                <h1 id="pname">Your Name</h1>
+
+                <p id="pemail">Email</p>
+
+                <p id="pphone">Phone</p>
+
+                <hr>
+
+                <h3>Professional Summary</h3>
+
+                <p id="psummary"></p>
+
+                <hr>
+
+                <h3>Education</h3>
+
+                <div id="educationPreview">
+                    No Education Added
+                </div>
+
+                <hr>
+
+                <h3>Experience</h3>
+
+                <div id="experiencePreview">
+                    No Experience Added
+                </div>
+
+                <hr>
+
+                <h3>Skills</h3>
+
+                <div id="skillsPreview">
+                    No Skills Added
+                </div>
+
+                <hr>
+
+                <h3>Projects</h3>
+
+                <div id="projectsPreview">
+                    No Projects Added
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
