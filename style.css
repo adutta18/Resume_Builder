@@ -26,6 +26,7 @@ body{
 /* ===========================
    CONTAINER
 =========================== */
+
 .container{
     display:flex;
     min-height:100vh;
@@ -48,7 +49,9 @@ body{
 
     height:100vh;
 
-    background:linear-gradient(180deg,#3ad3d3,#142A63);
+    background:linear-gradient(135deg, #06b6d4, #f43f5e);
+color: #fff;
+
 
     padding:30px 20px;
 
@@ -106,7 +109,8 @@ body{
 
     background:transparent;
 
-    color:white;
+    color:rgb(248, 244, 244);
+    font-weight: Bold;
 
     font-size:15px;
 
@@ -118,7 +122,7 @@ body{
 
 .sidebar button:hover{
 
-    background:rgba(16, 247, 235, 0.15);
+    background:rgb(206, 228, 10);
 
     transform:translateX(5px);
 
@@ -192,9 +196,9 @@ body{
 
     border-radius:12px;
 
-    background:#2563EB;
+    background:#ffffff;
 
-    color:white;
+    color:#1e293b; 
 
     font-size:22px;
 
@@ -212,9 +216,8 @@ body{
 
 .top-toolbar button{
 
-    background:#2563EB;
-
-    color:white;
+    background:linear-gradient(135deg, #06b6d4, #3ff4a9);
+color: #fff;    
 
     border:none;
 
